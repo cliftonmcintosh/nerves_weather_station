@@ -22,7 +22,7 @@ defmodule SensorHub.MixProject do
   def application do
     [
       mod: {SensorHub.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:inets, :logger, :runtime_tools]
     ]
   end
 
