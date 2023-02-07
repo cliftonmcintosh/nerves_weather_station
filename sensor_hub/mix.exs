@@ -30,6 +30,7 @@ defmodule SensorHub.MixProject do
   defp deps do
     [
       # Dependencies for all targets
+      {:circuits_i2c, "~> 1.1.0"},
       {:nerves, "~> 1.7.16 or ~> 1.8.0 or ~> 1.9.0", runtime: false},
       {:shoehorn, "~> 0.9.1"},
       {:ring_logger, "~> 0.8.5"},
