@@ -11,12 +11,7 @@ defmodule SensorHub.Application do
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: SensorHub.Supervisor]
 
-    children =
-      [
-        # Children for all targets
-        # Starts a worker by calling: SensorHub.Worker.start_link(arg)
-        # {SensorHub.Worker, arg},
-      ] ++ children(target())
+    children = children(target())
 
     Supervisor.start_link(children, opts)
   end
@@ -32,9 +27,9 @@ defmodule SensorHub.Application do
 
   def children(_target) do
     [
-      # Children for all targets except host
-      # Starts a worker by calling: SensorHub.Worker.start_link(arg)
-      # {SensorHub.Worker, arg},
+      {SGP30, []},
+      {BMP280, [i2c_address: 0x77, name: BMP280]},
+      {VEML7700, %{}}
     ]
   end
 
