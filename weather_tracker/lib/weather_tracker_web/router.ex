@@ -7,6 +7,8 @@ defmodule WeatherTrackerWeb.Router do
 
   scope "/api", WeatherTrackerWeb do
     pipe_through :api
+
+    post "/weather-conditions", WeatherConditionsController, :create
   end
 
   # Enable Swoosh mailbox preview in development
