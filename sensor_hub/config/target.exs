@@ -91,8 +91,6 @@ config :mdns_lite,
     }
   ]
 
-# Import target specific config. This must remain at the bottom
-# of this file so it overrides the configuration defined above.
-# Uncomment to use target specific configurations
-
+config :sensor_hub, :weather_tracker_url,
+  "#{System.get_env("WEATHER_TRACKER_HOST")}/api/weather-conditions"
 # import_config "#{Mix.target()}.exs"
